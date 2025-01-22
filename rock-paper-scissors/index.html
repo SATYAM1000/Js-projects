@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissor</title>
+    <script type="module" src="./src/main.ts"></script>
+    <link href="./src/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="w-full min-h-screen bg-gray-100 flex items-center justify-center flex-col"
+  >
+    <button
+      id="play-btn"
+      class="px-2 py-1 rounded-md bg-blue-600 text-white font-medium"
+    >
+      Start Playing
+    </button>
+
+    <div class="flex items-center justify-between gap-20 mt-20">
+      <div id="player" class="flex flex-col gap-1">
+        <span>PLAYER 1</span>
+        <div id="player-1" class="w-28 h-28 rounded-md overflow-hidden"></div>
+      </div>
+
+      <div id="player" class="flex flex-col gap-1">
+        <span>PLAYER 2</span>
+        <div id="player-2" class="w-28 h-28 rounded-md overflow-hidden"></div>
+      </div>
+    </div>
+  </body>
+</html>

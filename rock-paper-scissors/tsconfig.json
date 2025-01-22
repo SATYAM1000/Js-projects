@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // this means typescript will generate javascript compatible with ECMA SCRIPT 2022
+    "module": "ESNext", // this means typescript will use latest import/export module system
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true // ensures compatiblity with commonjs
+  },
+  "include": ["./src/**/*.{ts,tsx}"],
+  "exclude": ["./node_modules", "./dist"]
+}
