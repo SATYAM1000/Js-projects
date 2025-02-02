@@ -5,6 +5,10 @@
   font-weight: bold;
 }
 
+.game-arena {
+  overflow: hidden;
+}
+
 .start-button {
   background-color: orangered;
   color: #fff;

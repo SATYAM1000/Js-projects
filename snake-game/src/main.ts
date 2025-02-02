@@ -51,10 +51,32 @@ document.addEventListener("DOMContentLoaded", () => {
     gameArena.appendChild(foodElement);
   }
 
+  function redrawFood(food) {
+    const foodElement = drawDiv(food.x, food.y, "food");
+    gameArena.appendChild(foodElement);
+  }
+
+  function updateSnake() {
+    const newHead = { x: snake[0].x + dx, y: snake[0].y + dy };
+    if (newHead.x === food.x && newHead.y === food.y) {
+      score += 10;
+      const foodElement = document.getElementsByClassName("food")[0];
+      if (foodElement) {
+        foodElement.remove();
+        food.x = Math.floor(Math.random() * arenaSize);
+        food.y = Math.floor(Math.random() * arenaSize);
+        redrawFood(food);
+      }
+    }
+    snake.unshift(newHead);
+    snake.pop();
+  }
+
   function gameLoop() {
     setInterval(() => {
       drawScoreBoard();
       drawFoodAndSnake();
+      updateSnake();
     }, 1000);
   }
   function runGame() {
