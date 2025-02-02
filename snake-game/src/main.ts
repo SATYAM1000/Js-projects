@@ -31,9 +31,24 @@ document.addEventListener("DOMContentLoaded", () => {
     scoreBoard.textContent = `Score: ${score} `;
   }
 
+  function drawDiv(x, y, className) {
+    const div = document.createElement("div");
+    div.classList.add(className);
+    div.style.top = `${y}px`;
+    div.style.left = `${x}px`;
+    return div;
+  }
+
+  function drawFoodAndSnake() {
+    gameArena.innerHTML = ""; // if previously something is drawn then remove it
+    const foodElement = drawDiv(food.x, food.y, "food");
+    gameArena.appendChild(foodElement)
+  }
+
   function gameLoop() {
     setInterval(() => {
       drawScoreBoard();
+      drawFoodAndSnake();
     }, 1000);
   }
   function runGame() {
