@@ -41,8 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function drawFoodAndSnake() {
     gameArena.innerHTML = ""; // if previously something is drawn then remove it
+
+    snake.forEach((snakeCell) => {
+      const element = drawDiv(snakeCell.x, snakeCell.y, "snake");
+      gameArena.appendChild(element);
+    });
+
     const foodElement = drawDiv(food.x, food.y, "food");
-    gameArena.appendChild(foodElement)
+    gameArena.appendChild(foodElement);
   }
 
   function gameLoop() {
